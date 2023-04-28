@@ -20,7 +20,7 @@ steps:
   - name: Checkout the codebase
     uses: actions/checkout@v3
 
-  - name: Setup Molecule
+  - name: Setup Lint
     uses: bec-galaxy/setup-lint@v1
 
   - name: Run Lint tests
