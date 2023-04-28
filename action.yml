@@ -1,0 +1,23 @@
+name: "Setup Lint"
+author: "Patrick Becker"
+description: "Set up Ansible Lint."
+runs:
+  using: "composite"
+  steps:
+    - uses: actions/setup-python@v4
+      with:
+        python-version: "3.x"
+        check-latest: true
+        cache: "pip"
+
+    - run: pip install -r requirements.txt
+      shell: bash
+
+    - run: yamllint --version
+      shell: bash
+
+    - run: ansible-lint --version
+      shell: bash
+branding:
+  icon: "code"
+  color: "white"
